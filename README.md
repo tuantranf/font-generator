@@ -14,7 +14,7 @@ npm i -g https://github.com/Innovatube/font-generator
 
 ## Usage
 ```bash
-font-generator --fontName MyFont --dest outpath --iconsGlob ./icons/**/*.svg
+font-generator --fontName MyFont --dest outpath --iconsGlob './icons/**/*.svg'
 ```
 
 ## Use like this
