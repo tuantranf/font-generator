@@ -1,5 +1,7 @@
 # Font-generator
 
+Forked from https://github.com/entria/font-generator for custom configuration.
+
 Generate a TTF font to be used on React or React Native projects
 
 It also generates a JavaScript file with named codepoints
@@ -7,7 +9,7 @@ It also generates a JavaScript file with named codepoints
 ## Install
 
 ```bash
-npm i -g @entria/font-generator
+npm i -g https://github.com/Innovatube/font-generator
 ```
 
 ## Usage
@@ -75,6 +77,11 @@ const Icons = {
 
 export default Icons;
 ```
+
+## React Native sample
+
+React Native sample is here.
+https://github.com/Innovatube/react-native-custom-fonts
 
 # FontAwesome
 
