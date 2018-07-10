@@ -11,9 +11,11 @@ import ejs from 'ejs';
 import generateSvgFontAsync from './generateSVGFont';
 import generateTTFfromSVGFont from './svgToTTF';
 import jsData from './generateJSTemplate';
+import validateSVGFiles from './validateSVGFile';
 
 const START_CODEPOINT = 0xF101;
 const normalize = true;
+const fontHeight = 1001;
 
 /**
  * Rename file using basename
@@ -56,6 +58,8 @@ export default async function execute({
   try {
     const files = glob.sync(iconsGlob);
 
+    await validateSVGFiles(files);
+
     // const names = files.map((file) => rename(file));
     const names = files.map((file) => svgIconName(file));
 
@@ -66,6 +70,7 @@ export default async function execute({
 
     const options = {
       fontName,
+      fontHeight,
       files,
       normalize,
       names,

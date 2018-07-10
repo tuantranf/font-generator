@@ -13,6 +13,7 @@
     "flow-typed": "^2.1.2",
     "fs-jetpack": "^0.13.3",
     "glob": "^7.1.1",
+    "is-svg": "^3.0.0",
     "mkdirp": "^0.5.1",
     "svg2ttf": "^4.0.2",
     "svgicons2svgfont": "^5.0.0",
