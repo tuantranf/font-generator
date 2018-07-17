@@ -12,6 +12,7 @@ import generateSvgFontAsync from './generateSVGFont';
 import generateTTFfromSVGFont from './svgToTTF';
 import jsData from './generateJSTemplate';
 import validateSVGFiles from './validateSVGFile';
+import generateHTMLDemo from './generateHTMLDemo';
 
 const START_CODEPOINT = 0xF101;
 const normalize = true;
@@ -104,6 +105,9 @@ export default async function execute({
       const jsPath = path.join(dest, `${fontName}.${platform}.js`);
       writeFile(content, jsPath);
     });
+
+    await generateHTMLDemo(fontName, data['ios'], dest);
+
   } catch (err) {
     console.log(err);
   }

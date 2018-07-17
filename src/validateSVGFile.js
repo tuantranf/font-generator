@@ -30,7 +30,7 @@ async function validateSVGFiles(files: Array) {
   files.forEach((file) => promises.push(validateSVGFileAsync(file)));
   await Promise.all(promises)
     .then(() => {
-      console.log('SVG files validation OK!');
+      console.log('SVG files validated');
     })
     .catch((err) => {
       console.log('SVG files validation failed! Exiting ...');

@@ -1,0 +1,44 @@
+/* To provide support for elements dynamically added, this script adds
+   method 'icomoonLiga' to the window object. You can pass element references to this method.
+*/
+(function () {
+	'use strict';
+
+	var	icons = {
+        // 'home': '&#xe900;',
+        <%_ for (item of items) { -%>
+          '<%- item.name %>': '&#x<%- item.value %>;',
+          <%_ } -%>
+    };
+    delete icons['0'];
+    window.icomoonLiga = function (els) {
+        var classes,
+            el,
+            i,
+            innerHTML,
+            key;
+        els = els || document.getElementsByTagName('*');
+        if (!els.length) {
+            els = [els];
+        }
+        for (i = 0; ; i += 1) {
+            el = els[i];
+            if (!el) {
+                break;
+            }
+            classes = el.className;
+            if (/icon/.test(classes)) {
+                innerHTML = el.innerHTML;
+                if (innerHTML && innerHTML.length > 1) {
+                    for (key in icons) {
+                        if (icons.hasOwnProperty(key)) {
+                            innerHTML = innerHTML.replace(new RegExp(key, 'g'), icons[key]);
+                        }
+                    }
+                    el.innerHTML = innerHTML;
+                }
+            }
+        }
+    };
+    window.icomoonLiga();
+}());
