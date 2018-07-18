@@ -9,7 +9,7 @@ It also generates a JavaScript file with named codepoints
 ## Install
 
 ```bash
-npm i -g https://github.com/Innovatube/font-generator
+npm i -g https://github.com/tuantranf/font-generator
 ```
 
 ## Usage
